@@ -10,11 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33ee366c-de0d-4ace-8193-c19d0911e042" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileSnapshots.bin" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/cache.properties.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileHashes.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/taskArtifacts.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/netease/imageprocess/gles/gl/GLQuad.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/netease/imageprocess/gles/gl/GLQuad.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/netease/imageprocess/gles/gl/GLRenderer.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/netease/imageprocess/gles/gl/GLRenderer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/raw/gauss_f_unused.glsl" afterPath="$PROJECT_DIR$/app/src/main/res/raw/gauss_f_unused.glsl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ImageProcTest.iws" />
@@ -36,34 +38,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="KernelGenerator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/netease/imageprocess/gles/kernelgen/KernelGenerator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="48" selection-start-line="0" selection-start-column="48" selection-end-line="0" selection-end-column="48" />
-              <folding>
-                <element signature="e#936#937#0" expanded="true" />
-                <element signature="e#954#955#0" expanded="true" />
-                <element signature="e#991#992#0" expanded="true" />
-                <element signature="e#1014#1015#0" expanded="true" />
-                <element signature="e#1040#1041#0" expanded="true" />
-                <element signature="e#1059#1060#0" expanded="true" />
-                <element signature="e#1085#1086#0" expanded="true" />
-                <element signature="e#1104#1105#0" expanded="true" />
-                <element signature="e#1135#1136#0" expanded="true" />
-                <element signature="e#1155#1156#0" expanded="true" />
-                <element signature="e#1186#1187#0" expanded="true" />
-                <element signature="e#1208#1209#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="GLQuad.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/netease/imageprocess/gles/gl/GLQuad.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6085919">
-              <caret line="273" column="8" selection-start-line="273" selection-start-column="8" selection-end-line="273" selection-end-column="8" />
+            <state vertical-scroll-proportion="0.33174226">
+              <caret line="326" column="0" selection-start-line="326" selection-start-column="0" selection-end-line="326" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1652#1653#0" expanded="true" />
@@ -74,8 +53,8 @@
                 <element signature="e#1962#1963#0" expanded="true" />
                 <element signature="e#2021#2022#0" expanded="true" />
                 <element signature="e#2075#2076#0" expanded="true" />
-                <element signature="e#12393#12394#0" expanded="true" />
-                <element signature="e#12424#12425#0" expanded="true" />
+                <element signature="e#12396#12397#0" expanded="true" />
+                <element signature="e#12427#12428#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -91,11 +70,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="gauss_f_unused.glsl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/raw/gauss_f_unused.glsl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-4.4444447">
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="GLRenderer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/netease/imageprocess/gles/gl/GLRenderer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.592592">
-              <caret line="127" column="0" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="104" column="8" selection-start-line="104" selection-start-column="8" selection-end-line="104" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -1737,6 +1726,7 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/netease/imageprocess/gles/gl/FrameBufferObject.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/netease/imageprocess/gles/GLESProcActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_gles_process.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/raw/gauss_f_unused.glsl" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/netease/imageprocess/gles/gl/GLRenderer.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/netease/imageprocess/gles/gl/GLQuad.java" />
       </list>
@@ -1886,6 +1876,36 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ImageProcTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ImageProcTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="raw" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -2349,8 +2369,8 @@
             <element signature="e#1962#1963#0" expanded="true" />
             <element signature="e#2021#2022#0" expanded="true" />
             <element signature="e#2075#2076#0" expanded="true" />
-            <element signature="e#12393#12394#0" expanded="true" />
-            <element signature="e#12424#12425#0" expanded="true" />
+            <element signature="e#12396#12397#0" expanded="true" />
+            <element signature="e#12427#12428#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2439,8 +2459,8 @@
             <element signature="e#1962#1963#0" expanded="true" />
             <element signature="e#2021#2022#0" expanded="true" />
             <element signature="e#2075#2076#0" expanded="true" />
-            <element signature="e#12393#12394#0" expanded="true" />
-            <element signature="e#12424#12425#0" expanded="true" />
+            <element signature="e#12396#12397#0" expanded="true" />
+            <element signature="e#12427#12428#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2490,14 +2510,6 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/test_01_256.png">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/raw/gauss_f_unused.glsl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/android-sdks/sources/android-23/android/opengl/GLSurfaceView.java">
@@ -2582,6 +2594,32 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/netease/imageprocess/gles/gl/GLShader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.148148">
+          <caret line="64" column="36" selection-start-line="64" selection-start-column="35" selection-end-line="64" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/raw/gauss_f_unused.glsl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.4444447">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/netease/imageprocess/gles/gl/GLRenderer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="104" column="8" selection-start-line="104" selection-start-column="8" selection-end-line="104" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/netease/imageprocess/gles/GLESProcActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="6.703704">
@@ -2592,28 +2630,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/netease/imageprocess/gles/gl/GLShader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.148148">
-          <caret line="64" column="36" selection-start-line="64" selection-start-column="35" selection-end-line="64" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/netease/imageprocess/gles/gl/GLRenderer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.592592">
-          <caret line="127" column="0" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/netease/imageprocess/gles/gl/GLQuad.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6085919">
-          <caret line="273" column="8" selection-start-line="273" selection-start-column="8" selection-end-line="273" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.33174226">
+          <caret line="326" column="0" selection-start-line="326" selection-start-column="0" selection-end-line="326" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1652#1653#0" expanded="true" />
@@ -2624,8 +2644,8 @@
             <element signature="e#1962#1963#0" expanded="true" />
             <element signature="e#2021#2022#0" expanded="true" />
             <element signature="e#2075#2076#0" expanded="true" />
-            <element signature="e#12393#12394#0" expanded="true" />
-            <element signature="e#12424#12425#0" expanded="true" />
+            <element signature="e#12396#12397#0" expanded="true" />
+            <element signature="e#12427#12428#0" expanded="true" />
           </folding>
         </state>
       </provider>

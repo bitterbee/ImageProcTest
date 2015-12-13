@@ -104,9 +104,10 @@ public class GLRenderer implements GLSurfaceView.Renderer {
 		Log.i(TAG, "Generated Code for SHADER_TYPE_FRAGMENT:\n" + kernelSrcCode[KernelLangGLSL.SHADER_TYPE_FRAGMENT]);
 		
 		// create shaders
-		gaussShader = new GLShader(ctx,
-				kernelSrcCode[KernelLangGLSL.SHADER_TYPE_VERTEX],
-				kernelSrcCode[KernelLangGLSL.SHADER_TYPE_FRAGMENT]);
+//		gaussShader = new GLShader(ctx,
+//				kernelSrcCode[KernelLangGLSL.SHADER_TYPE_VERTEX],
+//				kernelSrcCode[KernelLangGLSL.SHADER_TYPE_FRAGMENT]);
+		gaussShader = new GLShader(ctx, R.raw.gauss_v_unused, R.raw.gauss_f_unused);
 		dispShader = new GLShader(ctx, R.raw.disp_v, R.raw.disp_f);
 		
 		// load testcases or not

@@ -270,7 +270,7 @@ public class GLQuad {
         // Draw to output
         t1 = System.nanoTime();
 
-        dispShader.use();
+        // dispShader.use();
         render(mvpMat, -1, viewW, viewH);
 
         msMeasures[1] = saveFrameBufferToBitmap(texImgW, texImgH);
