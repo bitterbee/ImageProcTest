@@ -116,8 +116,8 @@ public class GLRenderer implements GLSurfaceView.Renderer {
 		if (useTestCases) {
 			setupTestCases();
 		} else {
-			bitmaps.add(BitmapFactory.decodeResource(ctx.getResources(), R.drawable.test_01_1024));
-			bitmapNames.add("1024x1024");
+			bitmaps.add(BitmapFactory.decodeResource(ctx.getResources(), R.drawable.test_01_256));
+			bitmapNames.add("256x256");
 		}
 		
 		quad = new GLQuad();

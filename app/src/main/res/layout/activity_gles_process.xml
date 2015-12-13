@@ -18,9 +18,9 @@
         android:layout_height="256dp"
         android:contentDescription="test image" />
 
-    <!--<android.opengl.GLSurfaceView-->
-        <!--android:id="@+id/glview"-->
-        <!--android:layout_width="256dp"-->
-        <!--android:layout_height="256dp" />-->
+    <android.opengl.GLSurfaceView
+        android:id="@+id/glview"
+        android:layout_width="256dp"
+        android:layout_height="256dp" />
 
 </LinearLayout>

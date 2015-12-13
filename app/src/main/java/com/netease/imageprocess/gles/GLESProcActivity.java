@@ -13,7 +13,8 @@ import android.widget.ImageView;
 import com.netease.imageprocess.R;
 import com.netease.imageprocess.gles.gl.GLRenderer;
 
-public class GLESProcActivity extends Activity {
+public class GLESProcActivity extends Activity
+        implements View.OnClickListener {
     private static final String TAG = "GLESProcActivity";
 
     private GLSurfaceView glView = null;
@@ -22,8 +23,6 @@ public class GLESProcActivity extends Activity {
     private ImageView ivOutput = null;
 
     private Bitmap lastResultBm = null;
-
-    private boolean testsRan = true;
 
     public static void start(Context context) {
         Intent intent = new Intent(context, GLESProcActivity.class);
@@ -37,31 +36,20 @@ public class GLESProcActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // sets defaults
-        handleTouchOnImg();
+
+        setContentView(R.layout.activity_gles_process);
 
         // create GL view
-        glView = new GLSurfaceView(this);
+        glView = (GLSurfaceView) findViewById(R.id.glview);
         glView.setEGLContextClientVersion(2);
         glRenderer = new GLRenderer(this);
         glView.setRenderer(glRenderer);
         glRenderer.setView(glView);
         glView.setRenderMode(GLSurfaceView.RENDERMODE_WHEN_DIRTY);
-        glView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                handleTouchOnImg();
-            }
-        });
 
         // set up image view
         ivInput = (ImageView) findViewById(R.id.iv_input);
-        ivInput.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                handleTouchOnImg();
-            }
-        });
+        ivInput.setOnClickListener(this);
 
         ivOutput = (ImageView) findViewById(R.id.iv_output);
     }
@@ -80,36 +68,31 @@ public class GLESProcActivity extends Activity {
         glView.onResume();
     }
 
-    private void handleTouchOnImg() {
-        Log.i(TAG, "Touch on image");
-
-        if (!testsRan) {
-            setContentView(glView);
-
-            runTests();
-            testsRan = true;
-
-            Log.i(TAG, "Content view is now: glView");
-        } else {
-            testsRan = false;
-            lastResultBm = null;
-
-            if (glRenderer != null) {
-                lastResultBm = glRenderer.getResultBm();
-            }
-
-            if (lastResultBm != null) {
-                Log.i(TAG, "Updating image view");
-                ivOutput.setImageBitmap(lastResultBm);
-            }
-
-            setContentView(R.layout.activity_gles_process);
-
-            Log.i(TAG, "Content view is now: main");
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.iv_input:{
+                handleTouchOnImg();
+            }break;
+            default:
+                break;
         }
     }
 
-    private void runTests() {
-        glRenderer.runTests();
+    private void handleTouchOnImg() {
+        Log.i(TAG, "Touch on image");
+
+        lastResultBm = null;
+
+        if (glRenderer != null) {
+            lastResultBm = glRenderer.getResultBm();
+        }
+
+        if (lastResultBm != null) {
+            Log.i(TAG, "Updating image view");
+            ivOutput.setImageBitmap(lastResultBm);
+        }
+
+        Log.i(TAG, "Content view is now: main");
     }
 }
