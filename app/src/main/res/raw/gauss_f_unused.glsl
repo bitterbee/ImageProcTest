@@ -7,7 +7,7 @@ precision mediump float;
 
 varying vec2 vTexCoord;
 
-uniform vec2 uPxD;           // pixel delta values
+uniform vec2 pxD;           // pixel delta values
 uniform sampler2D sTexture;
 
 void main() {

@@ -1,10 +1,14 @@
+/*
+ * Utility class that prepares a frame buffer object
+ * 
+ * (c) Seth Hall et al.
+ * 
+ * @see AndroidGPUCannyDemo.java
+ */
 package com.netease.imageprocess.gles.gl;
 
 import android.opengl.GLES20;
 
-/**
- * Created by zyl06 on 12/13/15.
- */
 public class FrameBufferObject {
     private int fboID;
     private int renderID;
