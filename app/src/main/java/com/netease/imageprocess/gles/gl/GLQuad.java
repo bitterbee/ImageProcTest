@@ -7,10 +7,8 @@ import java.nio.IntBuffer;
 import java.util.ArrayList;
 
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.opengl.GLES20;
 import android.opengl.GLUtils;
-import android.opengl.Matrix;
 import android.util.Log;
 
 public class GLQuad {
@@ -367,18 +365,29 @@ public class GLQuad {
 
         resultBm = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
 
-        IntBuffer resultBuf = ByteBuffer.allocateDirect((int) (w * h * 4))
+        IntBuffer ib = ByteBuffer.allocateDirect((int) (w * h * 4))
                 .order(ByteOrder.nativeOrder()).asIntBuffer();
-        resultBuf.rewind();
+        IntBuffer ibt = ByteBuffer.allocateDirect((int) (w * h * 4))
+                .order(ByteOrder.nativeOrder()).asIntBuffer();
+        ib.rewind();
+        ibt.rewind();
 
         GLES20.glFinish();
 
         t1 = System.nanoTime();
-        GLES20.glReadPixels(0, 0, w, h, GLES20.GL_RGBA, GLES20.GL_UNSIGNED_BYTE, resultBuf);
+        GLES20.glReadPixels(0, 0, w, h, GLES20.GL_RGBA, GLES20.GL_UNSIGNED_BYTE, ib);
+
+        for (int i = 0; i < h; i++) {
+            for (int j = 0; j < w; j++) {
+                ibt.put((h - i - 1) * w + j, ib.get(i * w + j));
+            }
+        }
+
         t2 = System.nanoTime();
 
 //		resultBm.setPixels(resultBuf.array(), 0, w * 4, 0, 0, w, h);
-        resultBm.copyPixelsFromBuffer(resultBuf);
+        resultBm.copyPixelsFromBuffer(ibt);
+
 
         return (float) ((double) (t2 - t1) / 1000000.0);
     }
