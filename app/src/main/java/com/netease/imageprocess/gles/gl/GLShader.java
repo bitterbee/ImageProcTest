@@ -10,7 +10,7 @@ import android.opengl.GLES20;
 import android.util.Log;
 
 public class GLShader {
-	private static final String TAG = "GlImageProc::GLShader";
+	private static final String TAG = "ImageProc::GLShader";
 	private Context ctx;
 	
 	private int program;

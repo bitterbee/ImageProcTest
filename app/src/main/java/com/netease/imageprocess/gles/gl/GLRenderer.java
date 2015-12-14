@@ -49,7 +49,8 @@ public class GLRenderer implements GLSurfaceView.Renderer {
 	private float[] projMat = new float[16];
 	private float[] viewMat = new float[16];
 	private float[] mvpMat = new float[16];
-	
+
+	private GLShader edgeDetectShader;
 	private GLShader gaussShader;
 	private GLShader dispShader;
 
@@ -107,6 +108,7 @@ public class GLRenderer implements GLSurfaceView.Renderer {
 //		gaussShader = new GLShader(ctx,
 //				kernelSrcCode[KernelLangGLSL.SHADER_TYPE_VERTEX],
 //				kernelSrcCode[KernelLangGLSL.SHADER_TYPE_FRAGMENT]);
+		edgeDetectShader = new GLShader(ctx, R.raw.vertex_edge_detect, R.raw.frag_edge_detect);
 		gaussShader = new GLShader(ctx, R.raw.gauss_v_unused, R.raw.gauss_f_unused);
 		dispShader = new GLShader(ctx, R.raw.disp_v, R.raw.disp_f);
 		
@@ -124,7 +126,7 @@ public class GLRenderer implements GLSurfaceView.Renderer {
 		quad = new GLQuad();
 		quad.setNumRenderPasses(1);
 		quad.setSaveFrameBuffer(true);
-		quad.bindShaders(gaussShader, dispShader);
+		quad.bindShaders(edgeDetectShader, dispShader);
 	}
 
 

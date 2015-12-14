@@ -4,6 +4,7 @@ precision mediump float;
 #define K1      (1.0 / KSUM)
 #define K2      (2.0 / KSUM)
 #define K3      (4.0 / KSUM)
+#define K4      (8.0 / KSUM)
 
 varying vec2 vTexCoord;
 
