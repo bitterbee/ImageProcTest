@@ -9,19 +9,22 @@
         android:id="@+id/iv_input"
         android:layout_width="256dp"
         android:layout_height="256dp"
-        android:contentDescription="test image"
+        android:contentDescription="test input image"
         android:src="@drawable/test_01_256" />
 
     <ImageView
         android:id="@+id/iv_output"
         android:layout_width="256dp"
         android:layout_height="256dp"
-        android:scaleType="centerCrop"
-        android:contentDescription="test image" />
+        android:contentDescription="test output image"
+        android:scaleType="centerCrop" />
 
-    <android.opengl.GLSurfaceView
-        android:id="@+id/glview"
-        android:layout_width="256dp"
-        android:layout_height="256dp" />
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="time"
+        android:textColor="@android:color/black"
+        android:textSize="14dp" />
 
 </LinearLayout>

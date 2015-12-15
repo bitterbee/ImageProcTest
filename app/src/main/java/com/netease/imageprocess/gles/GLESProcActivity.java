@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.netease.imageprocess.R;
 import com.netease.imageprocess.gles.gl.GLRenderer;
@@ -21,6 +22,7 @@ public class GLESProcActivity extends Activity
     private GLRenderer glRenderer = null;
     private ImageView ivInput = null;
     private ImageView ivOutput = null;
+    private TextView tvTime = null;
 
     private Bitmap lastResultBm = null;
 
@@ -36,8 +38,7 @@ public class GLESProcActivity extends Activity
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
-        setContentView(R.layout.activity_gles_process);
+        setContentView(R.layout.activity_image_process_gles);
 
         // create GL view
         glView = (GLSurfaceView) findViewById(R.id.glview);
@@ -45,13 +46,14 @@ public class GLESProcActivity extends Activity
         glRenderer = new GLRenderer(this);
         glView.setRenderer(glRenderer);
         glRenderer.setView(glView);
-        glView.setRenderMode(GLSurfaceView.RENDERMODE_WHEN_DIRTY);
+        glView.setRenderMode(GLSurfaceView.RENDERMODE_CONTINUOUSLY);
 
         // set up image view
         ivInput = (ImageView) findViewById(R.id.iv_input);
         ivInput.setOnClickListener(this);
 
         ivOutput = (ImageView) findViewById(R.id.iv_output);
+        tvTime = (TextView) findViewById(R.id.tv_time);
     }
 
     @Override
@@ -86,6 +88,8 @@ public class GLESProcActivity extends Activity
 
         if (glRenderer != null) {
             lastResultBm = glRenderer.getResultBm();
+            float time = glRenderer.getExecAndPullTime();
+            tvTime.setText("time = " + time);
         }
 
         if (lastResultBm != null) {

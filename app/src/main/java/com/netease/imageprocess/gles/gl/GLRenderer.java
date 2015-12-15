@@ -36,6 +36,10 @@ public class GLRenderer implements GLSurfaceView.Renderer {
 	private float pushMsSum;
 	private float execMsSum;
 	private float pullMsSum;
+
+	private float execMs;
+	private float pullMs;
+
 	private String benchmarkRes = "";
 	
 	private Context ctx;
@@ -53,6 +57,7 @@ public class GLRenderer implements GLSurfaceView.Renderer {
 	private GLShader edgeDetectShader;
 	private GLShader gaussShader;
 	private GLShader dispShader;
+	private GLShader grayShader;
 
 	private GLSurfaceView view;
 	
@@ -108,7 +113,8 @@ public class GLRenderer implements GLSurfaceView.Renderer {
 //		gaussShader = new GLShader(ctx,
 //				kernelSrcCode[KernelLangGLSL.SHADER_TYPE_VERTEX],
 //				kernelSrcCode[KernelLangGLSL.SHADER_TYPE_FRAGMENT]);
-		edgeDetectShader = new GLShader(ctx, R.raw.vertex_edge_detect, R.raw.frag_edge_detect);
+		// edgeDetectShader = new GLShader(ctx, R.raw.edge_detect_v, R.raw.edge_detect_f);
+		grayShader = new GLShader(ctx, R.raw.gray_blur_v, R.raw.gray_blur_f);
 		gaussShader = new GLShader(ctx, R.raw.gauss_v_unused, R.raw.gauss_f_unused);
 		dispShader = new GLShader(ctx, R.raw.disp_v, R.raw.disp_f);
 		
@@ -126,7 +132,7 @@ public class GLRenderer implements GLSurfaceView.Renderer {
 		quad = new GLQuad();
 		quad.setNumRenderPasses(1);
 		quad.setSaveFrameBuffer(true);
-		quad.bindShaders(edgeDetectShader, dispShader);
+		quad.bindShaders(grayShader, dispShader);
 	}
 
 
@@ -152,7 +158,11 @@ public class GLRenderer implements GLSurfaceView.Renderer {
         
         // Render
         float[] execAndPullMs = quad.render(mvpMat, screenW, screenH);
-        execMsSum += execAndPullMs[0];
+
+		execMs = execAndPullMs[0];
+		pullMs = execAndPullMs[1];
+
+		execMsSum += execAndPullMs[0];
         pullMsSum += execAndPullMs[1];
         
         GLES20.glFinish();
@@ -183,7 +193,11 @@ public class GLRenderer implements GLSurfaceView.Renderer {
 	public Bitmap getResultBm() {
 		return quad.getResultBm();
 	}
-	
+
+	public float getExecAndPullTime() {
+		return execMs + pullMs;
+	}
+
 	private void testsFinished() {    	
     	float pushMsAvg = pushMsSum / (float)numTestRuns;
     	float execMsAvg = execMsSum / (float)numTestRuns;

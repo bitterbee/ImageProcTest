@@ -20,19 +20,19 @@ public class BlurUtil {
 
         Bitmap bitmap = Bitmap.createScaledBitmap(sentBitmap, sentBitmap.getWidth() / 2, sentBitmap.getHeight() / 2, false);
 
-//        if (Build.VERSION.SDK_INT > 16) {
-//            final RenderScript rs = RenderScript.create(context);
-//            final Allocation input = Allocation.createFromBitmap(rs, bitmap, Allocation.MipmapControl.MIPMAP_NONE,
-//                    Allocation.USAGE_SCRIPT);
-//            final Allocation output = Allocation.createTyped(rs, input.getType());
-//            final ScriptIntrinsicBlur script = ScriptIntrinsicBlur.create(rs, Element.U8_4(rs));
-//            script.setRadius(radius);
-//            script.setInput(input);
-//            script.forEach(output);
-//            output.copyTo(bitmap);
-//
-//            return bitmap;
-//        }
+        if (Build.VERSION.SDK_INT > 16) {
+            final RenderScript rs = RenderScript.create(context);
+            final Allocation input = Allocation.createFromBitmap(rs, bitmap, Allocation.MipmapControl.MIPMAP_NONE,
+                    Allocation.USAGE_SCRIPT);
+            final Allocation output = Allocation.createTyped(rs, input.getType());
+            final ScriptIntrinsicBlur script = ScriptIntrinsicBlur.create(rs, Element.U8_4(rs));
+            script.setRadius(radius);
+            script.setInput(input);
+            script.forEach(output);
+            output.copyTo(bitmap);
+
+            return bitmap;
+        }
 
         // Stack Blur v1.0 from
         // http://www.quasimondo.com/StackBlurForCanvas/StackBlurDemo.html
