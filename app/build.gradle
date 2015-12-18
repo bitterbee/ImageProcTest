@@ -11,10 +11,35 @@ android {
         versionCode 1
         versionName "1.0"
     }
+
+    signingConfigs {
+        myConfig {
+            // keystore
+            storeFile file('../ipc.jks')
+
+            // keys
+            storePassword "123456"
+            keyAlias "SimpleImageGray"
+            keyPassword "123456"
+        }
+    }
+
     buildTypes {
+        debug {
+            signingConfig signingConfigs.myConfig
+        }
+
         release {
+            signingConfig signingConfigs.myConfig
+            shrinkResources true
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    productFlavors {
+        aos_market_google {
+            manifestPlaceholders = [YANXUAN_CHANNEL_VALUE: "aos_market_google"]
         }
     }
 }

@@ -29,6 +29,8 @@ public class GLQuad {
     private int f_aTexCoordId;
     private int f_aPosId;
     private int f_uPxDeltaId;
+    private int f_uMVPMatrixId;
+
     // display shader parameters:
     private int d_aTexCoordId;
     private int d_aPosId;
@@ -91,6 +93,7 @@ public class GLQuad {
         f_aPosId = getShaderParamId(SHADER_PARAM_TYPE_ATTR, filterProg, "aPos");
         f_aTexCoordId = getShaderParamId(SHADER_PARAM_TYPE_ATTR, filterProg, "aTexCoord");
         f_uPxDeltaId = getShaderParamId(SHADER_PARAM_TYPE_UNIF, filterProg, "uPxD");
+        f_uMVPMatrixId = getShaderParamId(SHADER_PARAM_TYPE_UNIF, filterProg, "uMVPMatrix");
 
         // get ids for display shader program parameters
         d_aPosId = getShaderParamId(SHADER_PARAM_TYPE_ATTR, dispProg, "aPos");
@@ -310,7 +313,7 @@ public class GLQuad {
             GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, texIds[TEX_FBO + numRenderPasses - 1]);
 
             // set buffers
-            texBuf = texBufFlipped;
+            texBuf = texBufStd;
             vertexBuf = dispVertexBuf;
 
             // set parameter ids
@@ -367,26 +370,23 @@ public class GLQuad {
 
         IntBuffer ib = ByteBuffer.allocateDirect((int) (w * h * 4))
                 .order(ByteOrder.nativeOrder()).asIntBuffer();
-        IntBuffer ibt = ByteBuffer.allocateDirect((int) (w * h * 4))
-                .order(ByteOrder.nativeOrder()).asIntBuffer();
         ib.rewind();
-        ibt.rewind();
 
         GLES20.glFinish();
 
         t1 = System.nanoTime();
         GLES20.glReadPixels(0, 0, w, h, GLES20.GL_RGBA, GLES20.GL_UNSIGNED_BYTE, ib);
 
-        for (int i = 0; i < h; i++) {
-            for (int j = 0; j < w; j++) {
-                ibt.put((h - i - 1) * w + j, ib.get(i * w + j));
-            }
-        }
+//        for (int i = 0; i < h; i++) {
+//            for (int j = 0; j < w; j++) {
+//                ibt.put((h - i - 1) * w + j, ib.get(i * w + j));
+//            }
+//        }
 
         t2 = System.nanoTime();
 
 //		resultBm.setPixels(resultBuf.array(), 0, w * 4, 0, 0, w, h);
-        resultBm.copyPixelsFromBuffer(ibt);
+        resultBm.copyPixelsFromBuffer(ib);
 
 
         return (float) ((double) (t2 - t1) / 1000000.0);

@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.netease.imageprocess.R;
-import com.netease.imageprocess.common.util.EdgeDetectUtil;
+import com.netease.imageprocess.common.util.ImageGrayUtil;
 
 /**
  * Created by zyl06 on 12/13/15.
@@ -48,7 +48,7 @@ public class NormalProcActivity extends Activity
             case R.id.iv_input: {
                 Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.test_01_256);
                 long t0 = System.nanoTime();
-                Bitmap result = EdgeDetectUtil.apply(this, bitmap);
+                Bitmap result = ImageGrayUtil.apply(this, bitmap);
                 long t1 = System.nanoTime();
                 tvTime.setText("time = " + (t1 - t0)/1000000.0f);
                 ivOutput.setImageBitmap(result);
